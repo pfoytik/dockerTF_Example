@@ -11,4 +11,4 @@ RUN pip install keras
 RUN pip install sklearn
 RUN pwd
 
-CMD [ "python", "TF_Aggregate.py" ]
+CMD [ "python", "TF_Test.py" ]
