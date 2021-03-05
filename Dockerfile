@@ -11,4 +11,5 @@ RUN pip install keras
 RUN pip install sklearn
 RUN pwd
 
-CMD [ "python", "TF_Test.py" ]
+ENTRYPOINT [ "python", "./TF_Test.py" ]
+CMD ["testX1.npy", "testy1.npy", "fed1_recognition.model"]

@@ -17,16 +17,18 @@ def test_model(X_test, Y_test,  model, comm_round):
 
 argv = sys.argv[1:]
 opts, args = getopt.getopt(argv, 'x')
-if len(args) >=2:
+if len(args) >=3:
     X1_file = args[0]
     y1_file = args[1]
+    global_model = args[2]
 else:
     X1_file = 'testX1.npy'
     y1_file = 'testy1.npy'
+    global_model = 'fed1_recognition.model'
 
 X1 = np.load(X1_file, allow_pickle=True)
 y1 = np.load(y1_file, allow_pickle=True)
-model = tf.keras.models.load_model('global_recognition.model')
+model = tf.keras.models.load_model(global_model)
 
 opts, args = getopt.getopt(argv, 'x')
 a, l = test_model(X1, y1, model, 1)
